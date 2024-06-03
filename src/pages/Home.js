@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import data from './events/travelEvents'
 import FlipCard from '../components/Flipcard';
 

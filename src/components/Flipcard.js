@@ -22,7 +22,6 @@ const FlipCard = ({ data }) => {
     const Message = ({ num }) => {
         let message = "";
         if (num > 0) {
-            num = num;
             message = data.entries[num - 1];
         } else {
             num = ""
