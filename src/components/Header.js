@@ -18,7 +18,7 @@ const Header  = () =>  {
         <h1>Header</h1>
         <button className="nav-toggle" onClick={handleClick}>Klikkaa mua</button>
         </header>
-        <div class={`mobile-nav ${isOpen ? "is-open" : ""}`}><Navi /><ThemeButton /></div>
+        <div className={`mobile-nav ${isOpen ? "is-open" : ""}`}><Navi /><ThemeButton /></div>
         </>
     )
 }
