@@ -14,6 +14,8 @@
   --bg-dark-secondary: hsl(264, 8%, 5%);
   --text-light: black;
   --text-dark: white;
+  --gradient-dark: rgb(20, 18, 23);
+  --gradient-light:  rgb(215, 208, 220);
 }
 
 
@@ -28,6 +30,7 @@ body {
   --text-color: var(--text-light);
   background-color: var(--bg-primary);
   color: var(--text-color);
+  --gradient: var(--gradient-light);
 }
 
 .dark {
@@ -36,6 +39,7 @@ body {
   --text-color: var(--text-dark);
   background-color: var(--bg-primary);
   color: var(--text-color);
+  --gradient: var(--gradient-dark);
 }
 
 .themeBtn {
@@ -146,6 +150,7 @@ nav > ul > li > a {
   align-items: center;
   text-decoration: none;
   color: var(--text-color);
+  width: 100%;
 }
 
 nav > ul > li:hover {
@@ -163,19 +168,39 @@ nav > ul > li:hover {
   margin-right: 8px;
 }
 
+.main-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.bg {
+  background-image: 
+  linear-gradient(to bottom, transparent, var(--bg-primary), var(--bg-primary), var(--bg-primary)), 
+  url("https://www.dndspeak.com/wp-content/uploads/2022/09/f84e74790aaba06be99a030b73b1a61a.jpg");
+  background-size: cover;
+}
+
 .content-left, .content-right {
   display: inline-flex;
-  width: 50%;
+  flex: 1;
   flex-direction: column;
   align-items: center;
   padding: 24px;
   text-align: center;
 }
 
+.content-left {
+  justify-content: center;
+}
+
 .content-left > h1 {
   font-family: "Macondo", cursive;
   font-size: 3rem;
   margin-bottom: 2rem;
+}
+
+.content-left > p {
+  margin: 12px 0;
 }
 
 @media (max-width: 768px) {
@@ -191,6 +216,11 @@ nav > ul > li:hover {
   }
   .nav-toggle {
     display: block;
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
   }
 
   .header-mob {
@@ -209,18 +239,25 @@ nav > ul > li:hover {
     display: none;
   }
 
-  .content {
+  .main-content {
     flex-direction: column;
   }
 
   .content-left, .content-right {
     width: 100%;
     justify-content: center;
-    padding: 0px;
   }
 
-  .mobile-nav {
+  .content-left {
+    padding: 2rem 1rem;
+  }
 
+  .mobile-nav > nav {
+    width: 100%;
+  }
+
+  .mobile-nav > nav > ul > li > a{
+    justify-content: center;
   }
 
 }
@@ -308,4 +345,31 @@ nav > ul > li:hover {
   border-radius: 12px;
   margin: 12px;
   font-size: 1rem;
+}
+
+.rollbtn {
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    width: 100%;
+    background-color: hsl(155, 100%, 38%);
+    box-shadow: 0px 3px 3px 1px hsla(0, 0%, 0%, 0.3);
+    color: white;
+    font-weight: bold;
+    font-family: "Pathway Gothic One", sans-serif;
+    text-transform: uppercase;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.rollbtn:hover {
+  transform: scale(1.01);
+  transition: transform 250ms;
+  background-color: hsl(155, 100%, 31%);
+}
+
+
+.rollbtn:active {
+    transform: scale(0.95);
+    transition: transform 250ms;
 }

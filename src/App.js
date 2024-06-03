@@ -31,14 +31,14 @@ function App() {
           </div>
           
         </div>
-        <div className="col-2">
+        <div className="col-2 bg">
           <Header />
           <main className="content">
           <article>
             <NavRoutes />
           </article>
           </main>
-          <footer>Footer</footer>
+          <footer></footer>
         </div>   
       </div>
     </div>
