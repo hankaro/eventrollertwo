@@ -1,6 +1,6 @@
 // src/FlipCard.js
 import React, { useState } from 'react';
-import './FlipCard.css';
+import { LuDices } from "react-icons/lu";
 
 const FlipCard = ({ data }) => {
     const [num, setNum] = useState(0);
@@ -24,14 +24,15 @@ const FlipCard = ({ data }) => {
         if (num > 0) {
             message = data.entries[num - 1];
         } else {
-            num = ""
-            message = "Roll for event";
+            num = "--"
+            message = "(Click the button below to roll an event)";
         }
 
         return (
             <div className="flip-card-front">
-                <h1>{num}</h1>
-                <p>{message}</p>
+                <div className='card-heading'>Event No.</div>
+                <div className='card-number'>{num}</div>
+                <div className='card-text'>{message}</div>
             </div>
         );
     }
@@ -44,11 +45,11 @@ const FlipCard = ({ data }) => {
                         <Message num={num} />
                     </div>
                     <div className="flip-card-back">
-                        <h1>Back Side</h1>
+                        <div className='back-icon'><LuDices /></div>
                     </div>
                 </div>
-                <button onClick={handleClick}>Flip Card</button>
             </div>
+            <button onClick={handleClick} className='rollbtn'>Get a random event</button>
         </div>
     )
 }

@@ -1,12 +1,12 @@
 import "./App.css";
 import { ThemeProvider, useTheme } from "./ThemeContext";
-import ThemeButton from "./components/ThemeButton";
 import Header from "./components/Header";
 import Navi from "./components/Navi";
 import Home from "./pages/Home";
 import Town from "./pages/Town";
 import Raid from "./pages/Raid";
 import { Routes, Route} from "react-router-dom";
+import Dicelogo from "./dicelogo.png"
 
 const NavRoutes = () => {
   return (
@@ -24,7 +24,13 @@ function App() {
   return (
     <div className={theme === "light" ? "light" : "dark"}>
       <div className="wrapper">
-        <div className="col-1"><Navi /><ThemeButton /></div>
+        <div className="col-1">
+          <div>
+          <div className='header-text'><img src={Dicelogo} alt="Logo" className="headerlogo" /> EventRoller</div>
+          <Navi />
+          </div>
+          
+        </div>
         <div className="col-2">
           <Header />
           <main className="content">
